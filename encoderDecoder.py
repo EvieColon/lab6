@@ -10,34 +10,19 @@ def encode(password):
     new_password = ''.join(new_password_list)
     return new_password
 
-
-def decode(password):
-    old_password_list = []
-    for number in password:
-        old_number = int(number) - 3
-        if old_number < 0:
-            old_number = old_number + 10
-        old_number = str(old_number)
-        old_password_list.append(old_number)
-    old_password = ''.join(old_password_list)
-    return old_password
-
-
 if __name__ == '__main__':
     while True:
-        print("Decoder/Encoder Menu")
-        print("--------------------")
-        print("1. Encode password")
-        print("2. Decode password")
-        print("3. Exit program")
-        option = int(input("Please select an option: "))
+        print("Menu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+        option = int(input("Please enter an option: "))
         if option == 1:
-            original_password = input("Please enter the password to be encoded: ")
-            print(f"Encoded password: {encode(original_password)}")
+            original_password = input("Please enter your password to encode: ")
+            encoded_password = encode(original_password)
+            print("Your password has been encoded and stored!")
         elif option == 2:
-            encoded_password = input("Please enter the password to be decoded: ")
-            print(f"Decoded password: {decode(encoded_password)}")
+            print(f"The encoded password is {encoded_password}, and the original password is {original_passsword}")
         elif option == 3:
             break
-        else:
-            print("Invalid input! Please make another selection.")
