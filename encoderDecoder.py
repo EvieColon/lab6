@@ -10,6 +10,10 @@ def encode(password):
     new_password = ''.join(new_password_list)
     return new_password
 
+def decode(original_password, encoded_password):
+    print(f"The encoded password is {encoded_password}, and the original password is {original_password}")
+
+
 if __name__ == '__main__':
     while True:
         print("Menu")
@@ -23,6 +27,6 @@ if __name__ == '__main__':
             encoded_password = encode(original_password)
             print("Your password has been encoded and stored!")
         elif option == 2:
-            print(f"The encoded password is {encoded_password}, and the original password is {original_passsword}")
+            decode(original_password, encoded_password)
         elif option == 3:
             break
